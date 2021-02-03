@@ -5,6 +5,7 @@ import hinata from './original.jpg';
 import { MarkedInput } from './components/markedInput';
 import { Result } from './components/result';
 import { MarkedHeaderInput } from './components/headerMd';
+import { Tests } from './components/tests';
 import EditorContent from './editorContent';
 
 const AppContainer = styled.div`
@@ -43,7 +44,8 @@ export default function App() {
       <Title>Markdown Editor</Title>
       <EditorContainer>
         <MarkedHeaderInput />
-        <MarkedInput/>
+        <Tests />
+        {/* <MarkedInput/> */}
         <Result />
       </EditorContainer>
     </AppContainer>
