@@ -7,7 +7,7 @@ const Container = styled.div`
     width: 50%;
     height: 51%;
     padding: 13px;
-    border-right: 1.5px solid rgba(15, 15, 15, 0.4);
+    // border-right: 1.5px solid rgba(15, 15, 15, 0.4);
     font-family: 'Lato', sans-serif;
 `;
 
@@ -39,8 +39,17 @@ export function Tests(props) {
 
     const { markdownText } = useContext(editorContent);
 
+    const { setMarkdownText } = useContext(editorContent);
+
+    const onInputChange = e => {
+        const newValue = e.currentTarget.value;
+        setMarkdownText(newValue);
+    };
+
     return <Container>
-        <Title>Converted Text</Title>
+        <Title>Text</Title>
+        <textarea onChange={onInputChange} />
+        <Title>Converted Text3</Title>
         <ResultArea>
             <ReactMarkdown  source={"# my name is " + markdownText}/>
         </ResultArea>
